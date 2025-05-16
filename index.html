@@ -108,6 +108,29 @@ section {
         align-items: center;
     }
 }
+@media (max-width: 600px) {
+    .main-container {
+        flex-direction: column-reverse; /* 写真を上に、本文を下に */
+        align-items: center;
+    }
+
+    .photo-section {
+        margin-bottom: 20px; /* 本文との間に余白 */
+    }
+
+    .photo-section img {
+        width: 70%;      /* 幅を縮小 */
+        max-width: 250px;
+        height: auto;
+        border-radius: 8px;
+        border: 2px solid #90a4ae;
+        box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+
+    .content-section {
+        width: 90%;
+    }
+}
 </style>
 </head>
 <body>
