@@ -102,24 +102,26 @@ section {
 }
 
 /* レスポンシブ対応 */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .main-container {
         flex-direction: column;
         align-items: center;
     }
-}
-@media (max-width: 600px) {
-    .main-container {
-        flex-direction: column-reverse; /* 写真を上に、本文を下に */
-        align-items: center;
-    }
 
     .photo-section {
-        margin-bottom: 20px; /* 本文との間に余白 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 20px 0;
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        box-shadow: none;
     }
 
     .photo-section img {
-        width: 70%;      /* 幅を縮小 */
+        width: 80%;
         max-width: 250px;
         height: auto;
         border-radius: 8px;
@@ -129,6 +131,7 @@ section {
 
     .content-section {
         width: 90%;
+        margin: 0 auto;
     }
 }
 </style>
