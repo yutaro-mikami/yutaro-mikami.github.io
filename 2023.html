@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>論文タイトル（仮）</title>
+    <style>
+        body {
+            font-family: 'Yu Mincho', serif;
+            background-color: #fff3e0; /* 淡いオレンジ */
+            margin: 2rem;
+            color: #6d2600; /* 濃い茶色 */
+            line-height: 1.8;
+        }
+        .back-link {
+            display: block;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+            text-decoration: none;
+            color: #6d2600;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .content {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+            word-break: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+        }
+    </style>
+    <!-- MathJax for LaTeX-style math -->
+    <script>
+        window.MathJax = {
+            tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+            svg: { fontCache: 'global' }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+</head>
+<body>
+    <a href="hidden.html" class="back-link">← 前に戻る</a>
+
+    <div class="content">
+        <!-- ここに自由に文章を書いてください -->
+        <p>
+            この論文は私の修論である．
+            問題を見つけたのは，修士一年から二年になる3月(2022年)である．
+            私はもともとadic空間の一般論に興味があり，それに関連することを勉強していたのだが，一方でsheafinessなどの基本事項についてはもう現状の方法ではどうしようもないのではとも感じていた．
+            ちょうどその頃，日本で少し話題になっていたのがClausen-ScholzeによるCondensed mathematicsであり，これを良いタイミングだと思って勉強することにした．
+            私が読んだのはClausen-Scholzeのレクチャーノート1,2(3はまだ存在しなかった)とAndreychevの修論である．
+            Andreychevの修論ではopen coverに対するdescentが証明されているが，こうなると当然の疑問として他にはどのようなcoverに対してdescentが成立するだろうかというものが生じる．
+            実際Mathewによるリジッド解析空間上のpseudo-coherent complexに対するfppf descentの論文の中でも，証明をcondensed mathを用いて与えることができるのではないかという期待が書いてある．
+            以上を踏まえて，とりあえずリジッド解析空間上のsolid quasi-coherent complexのfppf descentを考えてみることにした．</p>
+
+            <p>当初はこれを修論にするつもりはなかった．
+            というのもこの問題はいささか簡単すぎるだろうと思っていたからである．
+            ところがいざ取り組んでみると，これがなかなか難しいのである．
+            問題点は係数拡大がテンソル積の"完備化"で与えられる点にある．
+            このせいで古典的な証明は全く機能しなくなってしまった．
+            正直，少し詰んでしまったかなと思ったが，1番簡単な場合である\(\mathbb{Q}_p→\mathbb{Q}_p\langle X\rangle\)の場合を考えているうちに，実は係数拡大が内部Homを用いて記述できるのではということに気づいた(特に係数拡大がlimitを保つ！という衝撃の帰結が得られる)．
+            これに気づいてしまえば，あとの方針を立てるのは割と容易で，ギリギリではあったがDC1前に論文を完成させることができた．なおこのタイミングでは基礎体に"剰余体が有限"という仮定がついていたが，これはすぐに外すことができた．</p>
+
+            <p>なお主定理の一部(スキーム上のsolid quasi-coherent complexに対するfppf descent)がMannの博論と被っていることを論文執筆中に知らされた．
+            幸い証明手法が異なっていたため，論文消滅とはならなかった．
+            最初の論文ということもあり，非常に思い入れのある論文である．
+            またこれのおかげで，修士の学位授与式の代表学生に選ばれた(なお，総長賞にも推薦されたがそちらは落ちてしまった)．
+            そういう意味でも印象深い論文である．
+        </p>
+    </div>
+</body>
+</html>
