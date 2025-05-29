@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fppf-descent for condensed animated rings</title>
+    <style>
+         body {
+            font-family: 'Yu Mincho', serif;
+            background-color: #fff3e0; /* 淡いオレンジ */
+            margin: 2rem;
+            color: #6d2600; /* 濃い茶色 */
+            line-height: 1.8;
+        }
+        .back-link {
+            display: block;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+            text-decoration: none;
+            color: #6d2600;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .content {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+            word-break: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+        }
+    </style>
+    <!-- MathJax for LaTeX-style math -->
+    <script>
+        window.MathJax = {
+            tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+            svg: { fontCache: 'global' }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+</head>
+<body>
+    <a href="hidden.html" class="back-link">← 前に戻る</a>
+
+    <div class="content">
+        <!-- ここに自由に文章を書いてください -->
+        <p>
+            これは私がD1の時に書いた論文である．
+            この頃は修論の次の研究テーマを見つけるのに苦労をしていた時期である．
+            Condensed mathとリジッド幾何学というスローガン自体はあったが具体的に何を研究するのか，どこに向かうべきか分かっていなかった．
+            そういう状況ではあったが，とりあえず一つ気になっていた問題として「修論の結果をanimated ringに拡張することはできるか？」というものがあったので，それに取り組むことにした．
+            Condensed mathにおけるdescentの証明方法は自分の修論におけるものとMannの博論におけるものの二つがあったが，どちらも考えている環がstatic出ないと通用しないものだったので，自明な問題ではないかなと思っていた．
+            最終的には随伴関手定理をうまく使うことで自分の修論のアプローチが使えることに気づいた．
+            （なお余談であるが，condensed modulesのなす圏は厳密にはpresentable \(\infty\)-categoryではないので，随伴関手定理を慎重に適用する必要があり面倒だった．
+            この苦労はlight condensed setを用いた定式化では存在しないため，早くlight condensed setを導入したいと思っている）．
+            この問題を考え始めた当時は問題をすごい気に入っていたわけではないが，最終的にはMannの方法と差別化ができ，そういった意味で一定の満足はしている結果である．
+        </p>
+    </div>
+</body>
+</html>
