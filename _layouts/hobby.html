@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }}</title>
+  {% if page.unlisted %}<meta name="robots" content="noindex,nofollow">{% endif %}
+  <link rel="stylesheet" href="{{ '/assets/css/hobby.css' | relative_url }}">
+  {% if page.mathjax %}{% include mathjax.html %}{% endif %}
+</head>
+<body class="{{ page.theme | default: 'light' }}">
+  {% if page.back %}<a href="{{ page.back | relative_url }}" class="back-link">← 前に戻る</a>{% endif %}
+  <main class="content">
+    {{ content }}
+  </main>
+</body>
+</html>

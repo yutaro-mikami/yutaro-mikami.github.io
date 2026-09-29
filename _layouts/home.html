@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: 'en' }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.lang == 'ja' %}三神雄太郎のホームページ{% else %}Yutaro Mikami{% endif %}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+</head>
+<body>
+<header>
+  <h1>{% if page.lang == 'ja' %}三神雄太郎のホームページ{% else %}Homepage of Yutaro Mikami{% endif %}</h1>
+  <div class="affiliation">
+    {% if page.lang == 'ja' %}
+      <a href="{{ site.data.profile.affiliation_url_ja }}">{{ site.data.profile.affiliation_ja }}</a>
+    {% else %}
+      <a href="{{ site.data.profile.affiliation_url_en }}">{{ site.data.profile.affiliation_en }}</a>
+    {% endif %}
+  </div>
+  <nav>
+    <a href="{{ '/index.html' | relative_url }}">English</a>
+    <a href="{{ '/index_jp.html' | relative_url }}">日本語</a>
+  </nav>
+</header>
+
+<main class="main-container">
+  <section class="content-section">
+    {% if page.lang == 'ja' %}
+      <p>{{ site.data.profile.position_ja }}</p>
+      <p>Email: {{ site.data.profile.email_primary }} （もしくは{{ site.data.profile.email_secondary }}）</p>
+      <h2>興味のあること</h2>
+      <p>{{ site.data.profile.research_ja }}</p>
+    {% else %}
+      <p>{{ site.data.profile.position_en }}</p>
+      <p>Email: {{ site.data.profile.email_primary }} (or {{ site.data.profile.email_secondary }})</p>
+      <h2>My Research Interest</h2>
+      <p>{{ site.data.profile.research_en }}</p>
+    {% endif %}
+
+    <p><a href="{{ '/cv.pdf' | relative_url }}">Curriculum Vitae</a></p>
+
+    <h2>{% if page.lang == 'ja' %}論文（出版済み）{% else %}Papers{% endif %}</h2>
+    <ol>
+      {% for paper in site.data.publications %}
+        {% if paper.status == 'published' %}
+          <li>{% if paper.authors != '' %}{{ paper.authors }}, {% endif %}<a href="{{ paper.url }}">{{ paper.title }}</a> {{ paper.citation }}</li>
+        {% endif %}
+      {% endfor %}
+    </ol>
+
+    <h2>{% if page.lang == 'ja' %}プレプリント{% else %}Preprints{% endif %}</h2>
+    <ol>
+      {% for paper in site.data.publications %}
+        {% if paper.status == 'preprint' %}
+          <li>{% if paper.authors != '' %}{{ paper.authors }}, {% endif %}<a href="{{ paper.url }}">{{ paper.title }}</a> {{ paper.citation }}</li>
+        {% endif %}
+      {% endfor %}
+    </ol>
+  </section>
+
+  <section class="photo-section">
+    {% if page.lang == 'ja' %}<a href="{{ '/hidden.html' | relative_url }}" target="_blank" rel="noopener noreferrer">{% endif %}
+      <img src="{{ '/photo.jpg' | relative_url }}" alt="Yutaro Mikami">
+    {% if page.lang == 'ja' %}</a>{% endif %}
+  </section>
+</main>
+</body>
+</html>

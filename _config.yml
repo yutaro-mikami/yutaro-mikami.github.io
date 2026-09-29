@@ -1,0 +1,12 @@
+title: Yutaro Mikami
+timezone: Asia/Tokyo
+markdown: kramdown
+
+collections:
+  paper_comments:
+    output: true
+  music_reviews:
+    output: true
+
+exclude:
+  - README.md

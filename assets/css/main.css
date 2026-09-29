@@ -1,0 +1,78 @@
+body {
+  font-family: 'Yu Mincho', 'Hiragino Mincho Pro', serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #e0f7fa;
+  background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+}
+
+header {
+  background-color: #b3e5fc;
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  border-bottom: 2px solid #0288d1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.affiliation { font-size: 0.8em; color: #666; }
+.affiliation a { color: inherit; }
+nav { margin-top: 10px; }
+nav a { margin: 0 10px; text-decoration: none; color: #01579b; }
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 40px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.content-section, .photo-section {
+  background-color: #fff;
+  border: 1px solid #0288d1;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  padding: 20px;
+}
+
+.content-section { flex: 3; min-width: 300px; max-width: 800px; }
+.content-section ol { padding-left: 1.5rem; }
+.content-section li { margin-bottom: 0.5rem; }
+.photo-section {
+  flex: 1;
+  min-width: 200px;
+  max-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+}
+.photo-section a { display: block; width: 100%; }
+.photo-section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 2px solid #90a4ae;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+@media (max-aspect-ratio: 4/3), (max-width: 760px) {
+  .main-container { flex-direction: column; align-items: center; padding: 20px; gap: 20px; }
+  .photo-section { width: 100%; margin: 10px 0; }
+  .photo-section img { width: 80%; max-width: 250px; display: block; margin: 0 auto; }
+  .content-section { width: 90%; min-width: 0; margin: 0 auto; }
+}
