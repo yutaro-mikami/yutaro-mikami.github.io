@@ -1,0 +1,12 @@
+_data/events.yml の例：
+
+- title: "Workshop on ..."
+  url: "https://example.com"
+  date_en: "April 10–12, 2027"
+  date_ja: "2027年4月10日–12日"
+  place_en: "Bonn, Germany"
+  place_ja: "ドイツ・ボン"
+  role_en: "Organizer"
+  role_ja: "主催"
+
+複数件ある場合は、このブロックを続けて追加してください。

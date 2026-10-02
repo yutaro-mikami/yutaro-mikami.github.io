@@ -1,6 +1,7 @@
 ---
 layout: hobby
 title: 好きなクラシック曲
+theme: piano
 permalink: /classic/main.html
 back: /hidden.html
 unlisted: true

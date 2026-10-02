@@ -1,17 +1,26 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="{{ page.lang | default: 'ja' }}">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ page.title }}</title>
-  {% if page.unlisted %}<meta name="robots" content="noindex,nofollow">{% endif %}
+
+  <title>{{ page.title }} | Yutaro Mikami</title>
+
   <link rel="stylesheet" href="{{ '/assets/css/hobby.css' | relative_url }}">
-  {% if page.mathjax %}{% include mathjax.html %}{% endif %}
 </head>
+
 <body class="{{ page.theme | default: 'light' }}">
-  {% if page.back %}<a href="{{ page.back | relative_url }}" class="back-link">← 前に戻る</a>{% endif %}
+
+  <a class="back-link"
+     href="{{ page.back | default: '/hidden.html' | relative_url }}">
+    ← Back
+  </a>
+
   <main class="content">
+    <h1>{{ page.title }}</h1>
+
     {{ content }}
   </main>
+
 </body>
 </html>

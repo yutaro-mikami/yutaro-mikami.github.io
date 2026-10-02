@@ -1,11 +1,11 @@
 ---
 layout: hobby
 title: 非公式のもの
+theme: hidden
 permalink: /hidden.html
 back: /index_jp.html
 unlisted: true
 ---
-# 非公式なもの
 
 ## 論文についてのコメント
 

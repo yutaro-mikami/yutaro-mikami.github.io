@@ -1,28 +1,208 @@
-body {
-  font-family: 'Yu Mincho', 'Hiragino Mincho Pro', serif;
-  margin: 2rem;
-  line-height: 1.8;
+:root {
+  --content-width: 760px;
 }
-body.light { background-color: #fff3e0; color: #6d2600; }
-body.dark { background-color: #000; color: #fff; }
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 2.2rem 1.4rem 3.5rem;
+  font-family: 'Yu Mincho', 'Hiragino Mincho ProN', 'Hiragino Mincho Pro', serif;
+  line-height: 1.85;
+  transition: background-color 0.15s ease;
+}
+
 .back-link {
   display: block;
-  margin-bottom: 2rem;
-  font-size: 0.95rem;
+  width: min(100%, var(--content-width));
+  margin: 0 auto 1.8rem;
+  font-size: 0.92rem;
   text-decoration: none;
   color: inherit;
+  opacity: 0.72;
 }
-.back-link:hover { text-decoration: underline; }
+
+.back-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
 .content {
-  max-width: 700px;
+  width: min(100%, var(--content-width));
   margin: 0 auto;
-  font-size: 1.05rem;
+  font-size: 1.03rem;
   word-break: break-word;
   overflow-wrap: break-word;
-  hyphens: auto;
 }
-.content h1 { text-align: center; margin-bottom: 2rem; }
-.content h2 { margin-top: 2rem; font-size: 1.3rem; border-bottom: 2px solid currentColor; padding-bottom: 0.3rem; }
-.content li { margin-bottom: 0.5rem; }
-.content a { color: inherit; }
-iframe { max-width: 100%; }
+
+.content h1 {
+  margin: 0 0 2.2rem;
+  text-align: center;
+  font-size: clamp(1.65rem, 4vw, 2rem);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+.content h2 {
+  margin: 2.5rem 0 1rem;
+  padding-bottom: 0.35rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  border-bottom: 1px solid currentColor;
+}
+
+.content p {
+  margin: 1rem 0;
+}
+
+.content ul,
+.content ol {
+  padding-left: 1.6rem;
+}
+
+.content li {
+  margin: 0.45rem 0;
+}
+
+.content a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+iframe {
+  display: block;
+  max-width: 100%;
+  margin: 1.5rem auto;
+}
+
+/* Default hobby page: neutral and intentionally plain. */
+body.light {
+  background: #fafafa;
+  color: #343434;
+}
+
+body.light .content a:hover {
+  color: #000;
+}
+
+/* Hidden hub: keeps the pale blue nuance of the main site. */
+body.hidden {
+  background: #eef8fb;
+  color: #2f3c40;
+}
+
+body.hidden .content h1 {
+  color: #284f5c;
+}
+
+body.hidden .content h2 {
+  color: #326575;
+  border-bottom-color: #b8d9e2;
+}
+
+body.hidden .content a {
+  color: #265f73;
+}
+
+body.hidden .content a:hover {
+  color: #153f4d;
+}
+
+/* Paper comments: warm, simple orange accent without card decoration. */
+body.paper {
+  background: #fff8ef;
+  color: #4b3829;
+}
+
+body.paper .content h1 {
+  color: #8a4a18;
+}
+
+body.paper .content h2 {
+  color: #9b551d;
+  border-bottom-color: #e5b987;
+}
+
+body.paper .content a {
+  color: #a75516;
+}
+
+body.paper .content a:hover {
+  color: #73360d;
+}
+
+body.paper .back-link {
+  color: #8a4a18;
+}
+
+/* Classical music: restrained monochrome, with the contrast of piano keys. */
+body.piano {
+  background: #f4f4f4;
+  color: #1c1c1c;
+  border-top: 5px solid #161616;
+}
+
+body.piano .content {
+  letter-spacing: 0.005em;
+}
+
+body.piano .content h1 {
+  color: #111;
+  padding-bottom: 0.7rem;
+  border-bottom: 2px solid #111;
+}
+
+body.piano .content h2 {
+  color: #111;
+  border-bottom-color: #8c8c8c;
+}
+
+body.piano .content a {
+  color: #202020;
+  text-decoration-color: #777;
+}
+
+body.piano .content a:hover {
+  color: #000;
+  text-decoration-color: #000;
+}
+
+body.piano .back-link {
+  color: #333;
+}
+
+/* Backward compatibility with older pages that still say theme: dark. */
+body.dark {
+  background: #111;
+  color: #f4f4f4;
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 1.5rem 1rem 2.8rem;
+  }
+
+  .back-link {
+    margin-bottom: 1.3rem;
+  }
+
+  .content {
+    font-size: 0.98rem;
+  }
+
+  .content h1 {
+    margin-bottom: 1.7rem;
+  }
+
+  .content h2 {
+    margin-top: 2rem;
+  }
+}

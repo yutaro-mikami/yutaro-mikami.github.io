@@ -3,65 +3,137 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{% if page.lang == 'ja' %}三神雄太郎の研究・論文・プロフィール{% else %}Research and publications of Yutaro Mikami{% endif %}">
   <title>{% if page.lang == 'ja' %}三神雄太郎のホームページ{% else %}Yutaro Mikami{% endif %}</title>
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 </head>
 <body>
-<header>
-  <h1>{% if page.lang == 'ja' %}三神雄太郎のホームページ{% else %}Homepage of Yutaro Mikami{% endif %}</h1>
-  <div class="affiliation">
-    {% if page.lang == 'ja' %}
-      <a href="{{ site.data.profile.affiliation_url_ja }}">{{ site.data.profile.affiliation_ja }}</a>
-    {% else %}
-      <a href="{{ site.data.profile.affiliation_url_en }}">{{ site.data.profile.affiliation_en }}</a>
-    {% endif %}
-  </div>
-  <nav>
-    <a href="{{ '/index.html' | relative_url }}">English</a>
-    <a href="{{ '/index_jp.html' | relative_url }}">日本語</a>
-  </nav>
-</header>
+  <header class="site-header">
+    <div class="header-inner">
+      <h1>{% if page.lang == 'ja' %}三神雄太郎のホームページ{% else %}Homepage of Yutaro Mikami{% endif %}</h1>
 
-<main class="main-container">
-  <section class="content-section">
-    {% if page.lang == 'ja' %}
-      <p>{{ site.data.profile.position_ja }}</p>
-      <p>Email: {{ site.data.profile.email_primary }} （もしくは{{ site.data.profile.email_secondary }}）</p>
-      <h2>興味のあること</h2>
-      <p>{{ site.data.profile.research_ja }}</p>
-    {% else %}
-      <p>{{ site.data.profile.position_en }}</p>
-      <p>Email: {{ site.data.profile.email_primary }} (or {{ site.data.profile.email_secondary }})</p>
-      <h2>My Research Interest</h2>
-      <p>{{ site.data.profile.research_en }}</p>
-    {% endif %}
-
-    <p><a href="{{ '/cv.pdf' | relative_url }}">Curriculum Vitae</a></p>
-
-    <h2>{% if page.lang == 'ja' %}論文（出版済み）{% else %}Papers{% endif %}</h2>
-    <ol>
-      {% for paper in site.data.publications %}
-        {% if paper.status == 'published' %}
-          <li>{% if paper.authors != '' %}{{ paper.authors }}, {% endif %}<a href="{{ paper.url }}">{{ paper.title }}</a> {{ paper.citation }}</li>
+      <p class="affiliation">
+        {% if page.lang == 'ja' %}
+          <a href="{{ site.data.profile.affiliation_url_ja }}">{{ site.data.profile.affiliation_ja }}</a>
+        {% else %}
+          <a href="{{ site.data.profile.affiliation_url_en }}">{{ site.data.profile.affiliation_en }}</a>
         {% endif %}
-      {% endfor %}
-    </ol>
+      </p>
 
-    <h2>{% if page.lang == 'ja' %}プレプリント{% else %}Preprints{% endif %}</h2>
-    <ol>
-      {% for paper in site.data.publications %}
-        {% if paper.status == 'preprint' %}
-          <li>{% if paper.authors != '' %}{{ paper.authors }}, {% endif %}<a href="{{ paper.url }}">{{ paper.title }}</a> {{ paper.citation }}</li>
+      <nav class="language-nav" aria-label="{% if page.lang == 'ja' %}言語選択{% else %}Language selection{% endif %}">
+        <a href="{{ '/index.html' | relative_url }}">English</a>
+        <span aria-hidden="true">/</span>
+        <a href="{{ '/index_jp.html' | relative_url }}">日本語</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <article class="content-section">
+      <section class="profile-section">
+        {% if page.lang == 'ja' %}
+          <p class="position">{{ site.data.profile.position_ja }}</p>
+          <p class="email">Email: {{ site.data.profile.email_primary }} （もしくは {{ site.data.profile.email_secondary }}）</p>
+          <p class="cv-link"><a href="{{ '/cv.pdf' | relative_url }}">Curriculum Vitae</a></p>
+
+          <h2>興味のあること</h2>
+          <p>{{ site.data.profile.research_ja }}</p>
+        {% else %}
+          <p class="position">{{ site.data.profile.position_en }}</p>
+          <p class="email">Email: {{ site.data.profile.email_primary }} (or {{ site.data.profile.email_secondary }})</p>
+          <p class="cv-link"><a href="{{ '/cv.pdf' | relative_url }}">Curriculum Vitae</a></p>
+
+          <h2>My Research Interest</h2>
+          <p>{{ site.data.profile.research_en }}</p>
         {% endif %}
-      {% endfor %}
-    </ol>
-  </section>
+      </section>
 
-  <section class="photo-section">
-    {% if page.lang == 'ja' %}<a href="{{ '/hidden.html' | relative_url }}" target="_blank" rel="noopener noreferrer">{% endif %}
-      <img src="{{ '/photo.jpg' | relative_url }}" alt="Yutaro Mikami">
-    {% if page.lang == 'ja' %}</a>{% endif %}
-  </section>
-</main>
+      <details class="expandable-section">
+        <summary>{% if page.lang == 'ja' %}論文（出版済み）{% else %}Papers{% endif %}</summary>
+        <div class="expandable-content">
+          <ol class="publication-list">
+            {% for paper in site.data.publications %}
+              {% if paper.status == 'published' %}
+                <li>
+                  {% if paper.authors != '' %}<span class="authors">{{ paper.authors }}, </span>{% endif %}
+                  <a class="paper-title" href="{{ paper.url }}">{{ paper.title }}</a>
+                  {% if paper.citation != '' %}<span class="citation"> {{ paper.citation }}</span>{% endif %}
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ol>
+        </div>
+      </details>
+
+      <details class="expandable-section">
+        <summary>{% if page.lang == 'ja' %}プレプリント{% else %}Preprints{% endif %}</summary>
+        <div class="expandable-content">
+          <ol class="publication-list">
+            {% for paper in site.data.publications %}
+              {% if paper.status == 'preprint' %}
+                <li>
+                  {% if paper.authors != '' %}<span class="authors">{{ paper.authors }}, </span>{% endif %}
+                  <a class="paper-title" href="{{ paper.url }}">{{ paper.title }}</a>
+                  {% if paper.citation != '' %}<span class="citation"> {{ paper.citation }}</span>{% endif %}
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ol>
+        </div>
+      </details>
+
+      <details class="expandable-section">
+        <summary>{% if page.lang == 'ja' %}主催した集会{% else %}Organized Events{% endif %}</summary>
+        <div class="expandable-content">
+          {% if site.data.events and site.data.events.size > 0 %}
+            <ul class="event-list">
+              {% for event in site.data.events %}
+                <li>
+                  {% assign event_title = event.title %}
+                  {% if page.lang == 'ja' and event.title_ja and event.title_ja != '' %}
+                    {% assign event_title = event.title_ja %}
+                  {% elsif page.lang != 'ja' and event.title_en and event.title_en != '' %}
+                    {% assign event_title = event.title_en %}
+                  {% endif %}
+
+                  {% if event.url and event.url != '' %}
+                    <a class="event-title" href="{{ event.url }}">{{ event_title }}</a>
+                  {% else %}
+                    <span class="event-title">{{ event_title }}</span>
+                  {% endif %}
+
+                  {% if page.lang == 'ja' %}
+                    {% if event.date_ja and event.date_ja != '' %}<span class="event-meta">{{ event.date_ja }}</span>{% endif %}
+                    {% if event.place_ja and event.place_ja != '' %}<span class="event-meta">{{ event.place_ja }}</span>{% endif %}
+                    {% if event.role_ja and event.role_ja != '' %}<span class="event-meta">{{ event.role_ja }}</span>{% endif %}
+                  {% else %}
+                    {% if event.date_en and event.date_en != '' %}<span class="event-meta">{{ event.date_en }}</span>{% endif %}
+                    {% if event.place_en and event.place_en != '' %}<span class="event-meta">{{ event.place_en }}</span>{% endif %}
+                    {% if event.role_en and event.role_en != '' %}<span class="event-meta">{{ event.role_en }}</span>{% endif %}
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            <p class="empty-note">{% if page.lang == 'ja' %}現在、掲載している集会情報はありません。{% else %}No events are listed at present.{% endif %}</p>
+          {% endif %}
+        </div>
+      </details>
+    </article>
+
+    <aside class="photo-section">
+      {% if page.lang == 'ja' %}
+        <a class="secret-link" href="{{ '/hidden.html' | relative_url }}" aria-label="Profile photo">
+          <img src="{{ '/photo.jpg' | relative_url }}" alt="Yutaro Mikami">
+        </a>
+      {% else %}
+        <img src="{{ '/photo.jpg' | relative_url }}" alt="Yutaro Mikami">
+      {% endif %}
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <p>© {{ 'now' | date: '%Y' }} Yutaro Mikami</p>
+  </footer>
 </body>
 </html>
