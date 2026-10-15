@@ -1,15 +1,3 @@
-- title: "On the relative Nullstellensatz in nonarchimedean geometry"
-  authors: "with Kiran S. Kedlaya"
-  url: "https://link.springer.com/article/10.1007/s40993-025-00690-2"
-  citation: "Res. Number Theory 12, 25 (2026)."
-  status: "published"
-
-- title: "Faithfully flat descent of quasi-coherent complexes on rigid analytic varieties via condensed mathematics"
-  authors: ""
-  url: "https://academic.oup.com/imrn/article/2024/8/7099/7542440"
-  citation: "Int. Math. Res. Not. IMRN 2024, no. 8, 7099–7128."
-  status: "published"
-
 - title: "The p-adic monodromy theorem over algebraic-affinoid algebras"
   authors: ""
   url: "https://arxiv.org/abs/2604.12280"
@@ -22,6 +10,12 @@
   citation: "arXiv preprint arXiv:2504.01780 (2026)"
   status: "preprint"
 
+- title: "On the relative Nullstellensatz in nonarchimedean geometry"
+  authors: "with Kiran S. Kedlaya"
+  url: "https://link.springer.com/article/10.1007/s40993-025-00690-2"
+  citation: "Res. Number Theory 12, 25 (2026)."
+  status: "published"
+
 - title: "(φ,Γ)-modules over relatively discrete algebras"
   authors: ""
   url: "https://arxiv.org/abs/2409.14145"
@@ -33,3 +27,10 @@
   url: "https://doi.org/10.1017/nmj.2026.10124"
   citation: "Nagoya Mathematical Journal. 2026;261:e52."
   status: "published"
+
+- title: "Faithfully flat descent of quasi-coherent complexes on rigid analytic varieties via condensed mathematics"
+  authors: ""
+  url: "https://academic.oup.com/imrn/article/2024/8/7099/7542440"
+  citation: "Int. Math. Res. Not. IMRN 2024, no. 8, 7099–7128."
+  status: "published"
+
