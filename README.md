@@ -17,7 +17,7 @@ GitHub Pages can build this repository with Jekyll.
 番号は自動で振られます。
 
 ### CV
-`CV.pdf` を同じ名前で置き換えます。
+`cv.pdf` を同じ名前で置き換えます。
 
 ### 論文コメント
 `_paper_comments/` の Markdown ファイルを編集します。
