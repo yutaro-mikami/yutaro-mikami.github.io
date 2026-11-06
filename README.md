@@ -17,7 +17,7 @@ GitHub Pages can build this repository with Jekyll.
 番号は自動で振られます。
 
 ### CV
-`cv.pdf` を同じ名前で置き換えます。
+`CV.pdf` を同じ名前で置き換えます。
 
 ### 論文コメント
 `_paper_comments/` の Markdown ファイルを編集します。
@@ -48,7 +48,6 @@ URLを知っている人は閲覧できます。本当に非公開にしたい�
 - 英日トップページのCSS重複を解消
 - 論文リストを1ファイルに集約
 - hidden / paper comment / classical music の一覧を自動生成
-- `cv.pdf` / `CV.pdf` の大文字小文字問題を解消
 - `anime/main.html` と Pollini ページの誤った `<title>` を修正
 - 各趣味ページに共通CSSを適用
 - `.DS_Store` と `texput.log` は移行対象から除外
