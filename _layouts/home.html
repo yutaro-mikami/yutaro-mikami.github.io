@@ -83,6 +83,46 @@
       </details>
 
       <details class="expandable-section">
+  <summary>{% if page.lang == 'ja' %}その他{% else %}Miscellaneous{% endif %}</summary>
+
+  <div class="expandable-content">
+
+    {% if site.data.misc and site.data.misc.size > 0 %}
+      <ul class="misc-list">
+
+        {% for item in site.data.misc %}
+          <li class="misc-item">
+
+            <a href="{{ item.url | relative_url }}">
+              {% if page.lang == "ja" and item.title_ja %}
+                {{ item.title_ja }}
+              {% else %}
+                {{ item.title_en }}
+              {% endif %}
+            </a>
+
+            {% if page.lang == "ja" and item.description_ja %}
+              <div class="misc-description">
+                {{ item.description_ja }}
+              </div>
+            {% elsif item.description_en %}
+              <div class="misc-description">
+                {{ item.description_en }}
+              </div>
+            {% endif %}
+
+          </li>
+        {% endfor %}
+
+      </ul>
+    {% else %}
+      <p>No miscellaneous notes are currently listed.</p>
+    {% endif %}
+
+  </div>
+</details>
+
+      <details class="expandable-section">
         <summary>{% if page.lang == 'ja' %}主催した集会{% else %}Organized Events{% endif %}</summary>
         <div class="expandable-content">
           {% if site.data.events and site.data.events.size > 0 %}

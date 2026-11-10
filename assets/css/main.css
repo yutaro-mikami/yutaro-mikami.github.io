@@ -175,6 +175,21 @@ a:focus-visible {
   color: #364a54;
 }
 
+.misc-list {
+  margin: 0.6rem 0 0;
+  padding-left: 1.4rem;
+}
+
+.misc-item {
+  margin-bottom: 0.9rem;
+}
+
+.misc-description {
+  margin-top: 0.2rem;
+  color: #666;
+  font-size: 0.95em;
+}
+
 .event-list {
   margin: 0.65rem 0 0;
   padding-left: 1.25rem;

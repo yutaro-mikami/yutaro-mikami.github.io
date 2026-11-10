@@ -1,0 +1,16 @@
+# Miscellaneous writings
+#
+# 各項目を下の例にならって追加してください。
+# 不要な項目（title_ja, description_ja など）は削除して構いません。
+
+- title_en: "Condensed mathematics and its application"
+  title_ja: "凝縮数学とその応用"
+  description_en: "Written in Japanese"
+  description_ja: "「代数的整数論とその周辺2025」での講究録"
+  url: "/misc/RIMS2025.pdf"
+
+- title_en: "(φ,Γ)-modules over relatively discrete algebras"
+  title_ja: "(φ,Γ)-modules over relatively discrete algebras"
+  description_en: "Written in Japanese"
+  description_ja: "「代数的整数論とその周辺2024」での講究録"
+  url: "/misc/RIMS2024.pdf"
